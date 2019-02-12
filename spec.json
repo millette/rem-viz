@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.0.0-rc12.json",
+  "width": 60,
+  "height": 200,
+  "data": {
+    "url": "bababa-by-day.csv"
+  },
+  "transform": [
+    {
+      "timeUnit": "year",
+      "field": "date",
+      "as": "year"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "color": {
+      "field": "year",
+      "type": "nominal",
+      "timeUnit": "year"
+    },
+    "column": {
+      "field": "date",
+      "type": "nominal",
+      "timeUnit": "month"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "count",
+      "type": "quantitative",
+      "axis": {
+        "title": "population",
+        "grid": false
+      }
+    },
+    "x": {
+      "axis": {
+        "title": ""
+      },
+      "field": "year",
+      "type": "nominal",
+      "timeUnit": "year"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
