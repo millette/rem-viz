@@ -5,7 +5,7 @@
     "deploy": "npm run clean && npm run build && gh-pages -d dist",
     "build-shake": "parcel build --no-source-maps --detailed-report --experimental-scope-hoisting --public-url ./ index.html",
     "build": "cp spec.json bababa-by-day.csv dist/ && parcel build --no-source-maps --public-url ./ index.html",
-    "clean": "rm -fr .cache dist",
+    "clean": "rm -fr .cache dist && mkdir dist",
     "start": "CHOKIDAR_USEPOLLING=yes parcel index.html # workaround https://github.com/parcel-bundler/parcel/issues/1743#issuecomment-441278085"
   },
   "license": "AGPL-3.0",
